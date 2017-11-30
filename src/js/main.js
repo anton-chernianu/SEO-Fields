@@ -1,4 +1,4 @@
-document.querySelector('.btn').click(function(){
+document.querySelector('.btn').onclick = function(){
 
 // Remove Popup Block
   var oldPopup = document.querySelector('.seobookm');
@@ -18,10 +18,8 @@ document.querySelector('.btn').click(function(){
   
 //   h1, h2
   var h1 = document.querySelectorAll('h1'),
-      h2 = document.querySelectorAll('h2');
-
-// info block
-  var info = document.querySelector('.seobookm');
+      h2 = document.querySelectorAll('h2'),
+      seobookm = document.querySelector('.seobookm');
   
   for (var i=0; i < h1.length; i++) {
     h1[i].setAttribute("style", "color:#fff; background-color:#173e43");
@@ -36,11 +34,11 @@ document.querySelector('.btn').click(function(){
 // Get Meta
   var meta = document.querySelector('meta[name="description"]').getAttribute('content');
   
-  info.innerHTML = 
+  seobookm.innerHTML = 
     "Title: " + title + "<br>" +
     "Description: " + meta;
 
-});
+};
 
 
 document.querySelector('.btnclick').onclick = function(){
@@ -53,7 +51,7 @@ document.querySelector('.close').onclick = function(){
 
 
 
-var inputCopy = document.querySelectorAll('.copy-text');
+var inputCopy = document.querySelectorAll('.seobookm__copy');
 
 inputCopy.forEach(item => {
   item.addEventListener('click', (event)=>{

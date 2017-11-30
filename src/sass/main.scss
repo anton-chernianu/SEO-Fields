@@ -83,6 +83,72 @@ a {
 	margin: 0 auto;
 }
 
+.title {
+	font-size: 2.2rem;
+
+	&--center {
+		text-align: center;
+	}
+
+	&--uppercase {
+		text-transform: uppercase;
+	}
+}
+
+.header {
+	background-color: #e2e2e2;
+	padding: 5px 0;
+
+	&__container {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.logo {
+
+	&__image {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.menu {
+	display: flex;
+
+	&__item {
+		padding: 0 10px;
+	}
+}
+
+.content {
+
+	&__container {
+		padding: 25px 0;
+	}
+
+	&__block {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		margin: 10px 0;
+	}
+
+	&__text {
+		padding: 0 10px;
+	}
+
+	.text {
+		padding: 5px 0;
+	}
+}
+
+
+
+
+
 .btn {
 	position: fixed;
 	left: 50px;
@@ -90,6 +156,7 @@ a {
 }
 
 .seobookm {
+	font-family: 'Open Sans', sans-serif;
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -112,16 +179,35 @@ a {
 		position: relative;
 		transition: all 5s ease-in-out;
 	}
+	
+	&__title {
+		font-weight: 700;
+		display: inline-block;
+		margin-top: 15px;
+		margin-bottom: 5px;
+	}
+
+	&__text {
+		display: inline-block;
+	}
+
+	&__copy {
+		font-family: 'Open Sans', sans-serif;
+		width: 100%;
+		padding: 5px;
+		display: inline-block;
+		resize: none;
+	}
+
 }
 
 .close {
 	text-align: right;
+	cursor: pointer;
 }
 
-.copy-text {
-	width: 100%;
-	padding: 5px;
-}
+
+
 
 
 
