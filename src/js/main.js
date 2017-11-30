@@ -55,10 +55,10 @@ document.querySelector('.close').onclick = function(){
 
 var inputCopy = document.querySelectorAll('.copy-text');
 
-
-Array.prototype.forEach.call(inputCopy, function(){
-  onclick = function(){
-    select();
+inputCopy.forEach(item => {
+  item.addEventListener('click', (event)=>{
+    console.log(1);
+    event.target.select();
     document.execCommand('copy');
-  };
+  })
 });
