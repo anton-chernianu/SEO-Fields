@@ -1,5 +1,4 @@
-
-document.querySelector('.btn').addEventListener("click", function() {
+document.querySelector('.btn').click(function(){
 
 // Remove Popup Block
   var oldPopup = document.querySelector('.seobookm');
@@ -41,5 +40,19 @@ document.querySelector('.btn').addEventListener("click", function() {
     "Title: " + title + "<br>" +
     "Description: " + meta;
 
-
 });
+
+
+document.querySelector('.btnclick').onclick = function(){
+  document.querySelector('.seobookm').setAttribute("style", "visibility: visible; opacity: 1;")
+};
+
+document.querySelector('.close').onclick = function(){
+  document.querySelector('.seobookm').setAttribute("style", "visibility: hidden; opacity: 0;")
+};
+
+document.querySelector('.copy-text').onclick = function(){
+  this.select();
+  document.execCommand('copy');
+};
+

@@ -177,6 +177,41 @@ a:hover {
   bottom: 50px;
 }
 
+.seobookm {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: opacity 500ms;
+  transition: opacity 500ms;
+  visibility: visible;
+  opacity: 1;
+}
+
+.seobookm__content {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  width: 100%;
+  max-width: 980px;
+  position: relative;
+  -webkit-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
+}
+
+.close {
+  text-align: right;
+}
+
+.copy-text {
+  width: 100%;
+  padding: 5px;
+}
+
 .preloader {
   position: fixed;
   left: 0;
