@@ -51,8 +51,14 @@ document.querySelector('.close').onclick = function(){
   document.querySelector('.seobookm').setAttribute("style", "visibility: hidden; opacity: 0;")
 };
 
-document.querySelector('.copy-text').onclick = function(){
-  this.select();
-  document.execCommand('copy');
-};
 
+
+var inputCopy = document.querySelectorAll('.copy-text');
+
+
+Array.prototype.forEach.call(inputCopy, function(){
+  onclick = function(){
+    select();
+    document.execCommand('copy');
+  };
+});
