@@ -1,9 +1,8 @@
 document.querySelector('.runScript').onclick = function(){
   
-  removeOldPopUp();
+  // removeOldPopUp();
   createCss();
-  createPopUp();
-  console.log('create');
+  // createPopUp();
 
 };
 
@@ -56,6 +55,7 @@ function createCss() {
   `;
 
   style.type = 'text/css';
+  style.className = 'seoStyle';
 
   if (style.styleSheet) {
     style.styleSheet.cssText = css;
@@ -63,7 +63,13 @@ function createCss() {
     style.appendChild(document.createTextNode(css));
   }
 
-  head.appendChild(style);
+  var styleHaveClass = document.querySelector('.seoStyle');
+  if (styleHaveClass) {
+    console.log('<style> have class');
+  }else {
+    head.appendChild(style);
+  }
+
 }
 
 function createPopUp() {
@@ -72,6 +78,7 @@ function createPopUp() {
   mainSEOpopup.className = 'seobookm';
 
   document.body.appendChild(mainSEOpopup);
+
 }
 
 function removeOldPopUp() {
@@ -82,6 +89,7 @@ function removeOldPopUp() {
     delete oldPopup;
     console.log('remove old pop-up');
   }
+  
 }
 
 document.querySelector('.btn').onclick = function(){
