@@ -13,6 +13,7 @@ function createCss() {
   var head = document.head || document.getElementsByTagName('head')[0];
   var style = document.createElement('style');
   var css = `
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
   .seobookm {
     font-family: 'Open Sans', sans-serif;
     position: fixed;
@@ -53,6 +54,12 @@ function createCss() {
     resize:none
   }
   .close{text-align:right;cursor:pointer}
+  .seobookm__text {
+    padding: 5px 0;
+  }
+  .seobookm__text span {
+    font-weight: 700;
+  }
   `;
 
   style.type = 'text/css';
@@ -95,11 +102,11 @@ function createPopUp() {
   seobookm.innerHTML = `
     <div class="seobookm__container">
       <div class="close">Close</div>
-      <p class="seobookm__title">Title:</p>
-      <p class="seobookm__text" id="titleLen">170ch</p>
-      <input name="title" type="text" id="seobookm__title" class="seobookm__copy" value="Hello World"/>
+      <p class="seobookm__title">Title:</p><br>
+      <p class="seobookm__text">With Space: <span id="titleWithSpace"></span>/70 WithOut Space: <span id="titleWithOutSpace"></span></p>
+      <input name="title" type="text" id="seobookm__title" class="seobookm__copy" value=""/>
       <p class="seobookm__title">Description:</p>
-      <p class="seobookm__text" id="descLen">300ch</p>
+      <p class="seobookm__text" id="descLen">300ch/160</p>
       <textarea name="description" class="seobookm__copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam cupiditate excepturi maxime! Nam voluptate, expedita ab alias, aut facilis id repellat vel placeat quae dignissimos consequuntur non! Dolorum, recusandae quis.</textarea>
     </div>
   `;
@@ -115,17 +122,30 @@ function createPopUp() {
 }
 
 function getTitleInfo() {
+  
   // Title
   var title = document.title;
   var titleInput = document.querySelector('input[name="title"]');
   titleInput.value = title;
+
   // Title Length
   var titleLength = titleInput.value.length;
-  console.log('With Space = ' + titleLength);
+  var spanTitleLength = document.querySelector('#titleWithSpace');
+  spanTitleLength.innerHTML = titleLength;
+
   // Title With no Space
   var titleDeleteSpace = title.replace(/\s/g, '');
   var titleDeleteSpaceLenght = titleDeleteSpace.length;
-  console.log('With no Space = ' + titleDeleteSpaceLenght);
+  document.querySelector('#titleWithOutSpace').innerHTML = titleDeleteSpaceLenght;
+
+  // Validation Title Length
+  if (titleLength < 50) {
+    spanTitleLength.setAttribute('style', 'color: #b9b608;');
+  } else if (titleLength > 50 && titleLength < 70) {
+    spanTitleLength.setAttribute('style', 'color: green;');
+  } else {
+    spanTitleLength.setAttribute('style', 'color: red;');
+  }
 
 }
 
