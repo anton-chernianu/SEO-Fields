@@ -1,8 +1,9 @@
 document.querySelector('.runScript').onclick = function(){
   
-  // removeOldPopUp();
+  removeOldPopUp();
   createCss();
-  // createPopUp();
+  createPopUp();
+  getPageInfo();
 
 };
 
@@ -25,7 +26,7 @@ function createCss() {
     visibility: visible;
     opacity: 1;
   }
-  .seobookm__content {
+  .seobookm__container {
     margin: 70px auto;
     padding: 20px;
     background: #fff;
@@ -72,14 +73,6 @@ function createCss() {
 
 }
 
-function createPopUp() {
-  var body = document.body;
-  var mainSEOpopup = document.createElement('div');
-  mainSEOpopup.className = 'seobookm';
-
-  document.body.appendChild(mainSEOpopup);
-
-}
 
 function removeOldPopUp() {
   // Remove Popup Block
@@ -91,6 +84,48 @@ function removeOldPopUp() {
   }
   
 }
+
+function createPopUp() {
+  // var body = document.body;
+
+  var seobookm = document.createElement('div');
+  seobookm.className = 'seobookm';
+  document.body.appendChild(seobookm);
+
+  seobookm.innerHTML = `
+    <div class="seobookm__container">
+      <div class="close">Close</div>
+      <p class="seobookm__title">Title:</p>
+      <p class="seobookm__text" id="titleLen">170ch</p>
+      <input name="title" type="text" id="seobookm__title" class="seobookm__copy" value="Hello World"/>
+      <p class="seobookm__title">Description:</p>
+      <p class="seobookm__text" id="descLen">300ch</p>
+      <textarea name="description" class="seobookm__copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam cupiditate excepturi maxime! Nam voluptate, expedita ab alias, aut facilis id repellat vel placeat quae dignissimos consequuntur non! Dolorum, recusandae quis.</textarea>
+    </div>
+  `;
+
+// Close Button Setting
+  var closeBtn = document.querySelector('.close');
+  if(closeBtn) {
+    closeBtn.onclick = function(){
+      document.querySelector('.seobookm').setAttribute("style", "visibility: hidden; opacity: 0;");
+    }
+  }
+
+}
+
+function getPageInfo() {
+
+// Title
+var title = document.title;
+var titleInput = document.querySelector('input[name="title"]');
+titleInput.value = title;
+// Title Length
+var titleLength = titleInput.value.length;
+console.log('With Space = ' + titleLength);
+
+}
+
 
 document.querySelector('.btn').onclick = function(){
 
@@ -128,16 +163,9 @@ document.querySelector('.btn').onclick = function(){
 
 };
 
-
 document.querySelector('.btnclick').onclick = function(){
   document.querySelector('.seobookm').setAttribute("style", "visibility: visible; opacity: 1;")
-};
-
-document.querySelector('.close').onclick = function(){
-  document.querySelector('.seobookm').setAttribute("style", "visibility: hidden; opacity: 0;")
-};
-
-
+}
 
 var inputCopy = document.querySelectorAll('.seobookm__copy');
 
