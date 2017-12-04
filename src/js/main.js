@@ -4,6 +4,9 @@ document.querySelector('.runScript').onclick = function(){
   createCss();
   createPopUp();
   getTitleInfo();
+  getDescInfo();
+  h1highlight();
+  TextLength();
 
   copyInputLeftClick();
 };
@@ -74,7 +77,7 @@ function createCss() {
 
   var styleHaveClass = document.querySelector('.seoStyle');
   if (styleHaveClass) {
-    console.log('<style> have class');
+    // console.log('<style> have class');
   }else {
     head.appendChild(style);
   }
@@ -106,9 +109,9 @@ function createPopUp() {
       <p class="seobookm__title">Title:</p><br>
       <p class="seobookm__text">With Spaces: <span id="titleWithSpace"></span>/70 WithOut Spaces: <span id="titleWithOutSpace"></span></p>
       <input name="title" type="text" id="seobookm__title" class="seobookm__copy" value=""/>
-      <p class="seobookm__title">Description:</p>
-      <p class="seobookm__text" id="descLen">300ch/160</p>
-      <textarea name="description" class="seobookm__copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam cupiditate excepturi maxime! Nam voluptate, expedita ab alias, aut facilis id repellat vel placeat quae dignissimos consequuntur non! Dolorum, recusandae quis.</textarea>
+      <p class="seobookm__title">Description:</p><br>
+      <p class="seobookm__text" id="descLen">With Spaces: <span id="DescWithSpace"></span>/160 WithOut Spaces: <span id="DescWithOutSpace"></span></p>
+      <textarea name="description" class="seobookm__copy description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam cupiditate excepturi maxime! Nam voluptate, expedita ab alias, aut facilis id repellat vel placeat quae dignissimos consequuntur non! Dolorum, recusandae quis.</textarea>
     </div>
   `;
 
@@ -150,6 +153,47 @@ function getTitleInfo() {
 
 }
 
+function getDescInfo() {
+  // Description
+  var description = document.querySelector('meta[name="description"]').getAttribute('content');
+  document.querySelector('.description-text').innerHTML = description;
+  // Description Length With Spaces
+  var description__lengSpaces = description.length;
+  var spanDescLenght = document.querySelector('#DescWithSpace');
+  // Description Length With Out Spaces
+  var description__DellSpaces = description.replace(/\s/g, '');
+  var description__lengNoSpaces = description__DellSpaces.length;
+
+  document.querySelector('#DescWithSpace').innerHTML = description__lengSpaces;
+  document.querySelector('#DescWithOutSpace').innerHTML = description__lengNoSpaces;
+
+  if (description__lengSpaces < 140) {
+    spanDescLenght.setAttribute('style', 'color: #b9b608;');
+  } else if (description__lengSpaces > 140 && description__lengSpaces < 160) {
+    spanDescLenght.setAttribute('style', 'color: green;');
+  } else {
+    spanDescLenght.setAttribute('style', 'color: red;');
+  }
+
+}
+
+function h1highlight() {
+  var h1 = document.querySelectorAll('h1'),
+      h2 = document.querySelectorAll('h2');
+
+  for (var i=0; i < h1.length; i++) {
+    h1[i].setAttribute("style", "color:#fff; background-color:#173e43");
+  }
+  for (var i=0; i < h2.length; i++) {
+    h2[i].setAttribute("style", "color:#fff; background-color:#3fb0ac");
+  }
+
+  var h1__lenght = h1.length;
+  var h2__lenght = h2.length;
+  // console.log('h1 = ' + h1__lenght);
+  // console.log('h2 = ' + h2__lenght);
+}
+
 function copyInputLeftClick(){
 
   var inputCopy = document.querySelectorAll('.seobookm__copy');
@@ -170,44 +214,35 @@ function copyInputLeftClick(){
 
 }
 
+function TextLength() {
 
-document.querySelector('.btn').onclick = function(){
+  var result = [];
+  for(var i=1; i<=6; i++) {
+    var h__title = document.querySelectorAll('h' + i);
 
+    for (var a=0; a<h__title.length; a++) {
+      result.push(h__title[a].textContent);
+    }
 
-
-// Create Popup
-  var body = document.body;
-  var d = document.createElement('div');
-
-  d.className='seobookm';
-  d.setAttribute("style", "position:fixed;top:0;left:0;width:100%;z-index:999;background-color:#fff;min-height:100px;border:2px solid #000;padding:5px;box-sizing:border-box;")
-  document.body.appendChild(d);
-  
-//   h1, h2
-  var h1 = document.querySelectorAll('h1'),
-      h2 = document.querySelectorAll('h2'),
-      seobookm = document.querySelector('.seobookm');
-  
-  for (var i=0; i < h1.length; i++) {
-    h1[i].setAttribute("style", "color:#fff; background-color:#173e43");
-  }
-  for (var i=0; i < h2.length; i++) {
-    h2[i].setAttribute("style", "color:#fff; background-color:#3fb0ac");
   }
 
-// Get Title
-  var title = document.title;
-  
-// Get Meta
-  var meta = document.querySelector('meta[name="description"]').getAttribute('content');
-  
-  seobookm.innerHTML = 
-    "Title: " + title + "<br>" +
-    "Description: " + meta;
+  var arr__lenght = [];
+  result.forEach(function(item, i, arr) {
+    var hlength = item.length;
+    arr__lenght.push(hlength);
+  });
 
-};
+  console.log('array h1 = ' + arr__lenght);
+
+  var sum__H1lenght = 0;
+  for (var i = 0; i < arr__lenght.length; i++) {
+    sum__H1lenght = sum__H1lenght + arr__lenght[i];
+  }
+  console.log(sum__H1lenght);
+
+
+}
 
 document.querySelector('.btnclick').onclick = function(){
   document.querySelector('.seobookm').setAttribute("style", "visibility: visible; opacity: 1;");
 }
-
