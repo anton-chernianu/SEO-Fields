@@ -5,6 +5,7 @@ document.querySelector('.runScript').onclick = function(){
   createPopUp();
   getTitleInfo();
 
+  copyInputLeftClick();
 };
 
 
@@ -103,7 +104,7 @@ function createPopUp() {
     <div class="seobookm__container">
       <div class="close">Close</div>
       <p class="seobookm__title">Title:</p><br>
-      <p class="seobookm__text">With Space: <span id="titleWithSpace"></span>/70 WithOut Space: <span id="titleWithOutSpace"></span></p>
+      <p class="seobookm__text">With Spaces: <span id="titleWithSpace"></span>/70 WithOut Spaces: <span id="titleWithOutSpace"></span></p>
       <input name="title" type="text" id="seobookm__title" class="seobookm__copy" value=""/>
       <p class="seobookm__title">Description:</p>
       <p class="seobookm__text" id="descLen">300ch/160</p>
@@ -122,7 +123,7 @@ function createPopUp() {
 }
 
 function getTitleInfo() {
-  
+
   // Title
   var title = document.title;
   var titleInput = document.querySelector('input[name="title"]');
@@ -146,6 +147,26 @@ function getTitleInfo() {
   } else {
     spanTitleLength.setAttribute('style', 'color: red;');
   }
+
+}
+
+function copyInputLeftClick(){
+
+  var inputCopy = document.querySelectorAll('.seobookm__copy');
+  inputCopy.forEach(item => {
+    item.addEventListener('click', (event)=>{
+
+      var divInputCopy = document.querySelector('.input-copy');
+      if (divInputCopy) {
+        divInputCopy.parentNode.removeChild(divInputCopy);
+      }
+
+      event.target.select();
+      document.execCommand('copy');
+
+      event.target.insertAdjacentHTML('afterend', '<div class="input-copy">copy</div>');
+    })
+  });
 
 }
 
@@ -187,15 +208,6 @@ document.querySelector('.btn').onclick = function(){
 };
 
 document.querySelector('.btnclick').onclick = function(){
-  document.querySelector('.seobookm').setAttribute("style", "visibility: visible; opacity: 1;")
+  document.querySelector('.seobookm').setAttribute("style", "visibility: visible; opacity: 1;");
 }
 
-var inputCopy = document.querySelectorAll('.seobookm__copy');
-
-inputCopy.forEach(item => {
-  item.addEventListener('click', (event)=>{
-    console.log(1);
-    event.target.select();
-    document.execCommand('copy');
-  })
-});
