@@ -3,7 +3,7 @@ document.querySelector('.runScript').onclick = function(){
   removeOldPopUp();
   createCss();
   createPopUp();
-  getPageInfo();
+  getTitleInfo();
 
 };
 
@@ -114,15 +114,18 @@ function createPopUp() {
 
 }
 
-function getPageInfo() {
-
-// Title
-var title = document.title;
-var titleInput = document.querySelector('input[name="title"]');
-titleInput.value = title;
-// Title Length
-var titleLength = titleInput.value.length;
-console.log('With Space = ' + titleLength);
+function getTitleInfo() {
+  // Title
+  var title = document.title;
+  var titleInput = document.querySelector('input[name="title"]');
+  titleInput.value = title;
+  // Title Length
+  var titleLength = titleInput.value.length;
+  console.log('With Space = ' + titleLength);
+  // Title With no Space
+  var titleDeleteSpace = title.replace(/\s/g, '');
+  var titleDeleteSpaceLenght = titleDeleteSpace.length;
+  console.log('With no Space = ' + titleDeleteSpaceLenght);
 
 }
 
