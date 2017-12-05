@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Chrome Speed",
+    "description": "Simple Chrome Extension",
+    "version": "1.0",
+	"background": "popup.html",
+	"content_scripts": [
+	{
+	  "matches": ["<all_urls>"],
+	  // "css": ["mystyles.css"],
+	  "js": ["popup.js"]
+	}
+	],
+
+	"icons": { "16": "calc.png",
+               "48": "calc.png",
+               "128": "calc.png" }	   
+}
