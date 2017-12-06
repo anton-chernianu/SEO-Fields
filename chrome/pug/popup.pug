@@ -2,10 +2,27 @@ head
 	link(href='css/popup.css',rel="stylesheet")
 	script(src="popup.js")
 body
+	header
+		.preloader
 	.main
 		.container
+			p.title <span>Seo</span>Grab 
 			.block
-				#title
+				.block__info
+					p.block__title Page Title:
+					.block__subtitle
+						p.lenght 20/120 ch
+				.block__input
+					input.copy-text(type="text" value="Lorem ipsum.")
+					span.copy Copy
+			.block
+				.block__info
+					p.block__title Description:
+					.block__subtitle
+						p.lenght 20/120 ch
+				.block__input
+					textarea.copy-text(name="description") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, autem.
+					span.copy Copy
 			#clickbtn Click
 			label.switch
 				input(type="checkbox" class="switch-input")
