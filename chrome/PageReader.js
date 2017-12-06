@@ -1,10 +1,10 @@
-﻿function GetTitle() {
+﻿// Page Title
+function GetTitle() {
     var title = document.title;
     return title;
 }
-
-
-function h1highlight() {
+// H1, H2 - Background Change
+function Hbackground_color() {
     var h1 = document.querySelectorAll('h1, h1 span'),
         h2 = document.querySelectorAll('h2, h2 span');
 
@@ -17,16 +17,17 @@ function h1highlight() {
 
 }
 
+// Send Message to DOM 
 chrome.extension.sendMessage({
     action: "result",
-    title: GetTitle()
+    title: GetTitle() // Title
 });
 
-
+// Change H background after click button
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         if( request.message === "start" ) {
-            h1highlight();
+            Hbackground_color();
         }
     }
 );
