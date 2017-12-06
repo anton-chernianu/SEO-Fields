@@ -1,31 +1,14 @@
 {
+    "name": "Seo Inspector",
+    "version": "1.23",
     "manifest_version": 2,
-    "name": "SEO",
-    "description": "SEO",
-    "version": "1.0",
-    "browser_action": {      
-        "default_icon": "seobookm.png",
-        "default_title": "Seo Exp"
+    "description": "Page Information",
+    "permissions": [ "activeTab", "tabs", "notifications", "http://*/", "https://*/" ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
     },
-
-	"icons": { "16": "seobookm.png",
-               "48": "seobookm.png",
-               "128": "seobookm.png" },
-  "permissions": [
-      "tabs",
-      "http://*/*",
-      "https://*/*",
-      "storage",
-      "activeTab"
-  ],
-  "background" : {
-    "scripts": ["background.js"]
-  },
-  "content_scripts": [
-  {
-    "matches": ["<all_urls>"],
-    "js": ["background.js"]
-  }
-  ]
-
+    "icons": { "16": "icon-16.png",
+           "32": "icon-32.png",
+          "128": "icon-128.png" }
 }

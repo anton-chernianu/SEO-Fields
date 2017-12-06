@@ -190,6 +190,7 @@ function h1highlight() {
 
   var h1__lenght = h1.length;
   var h2__lenght = h2.length;
+
   // console.log('h1 = ' + h1__lenght);
   // console.log('h2 = ' + h2__lenght);
 }
