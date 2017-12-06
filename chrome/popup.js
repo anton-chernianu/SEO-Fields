@@ -9,7 +9,6 @@ function popup() {
 function copyInputLeftClick(){
 
   var inputCopy = document.querySelectorAll('.copy-text');
-  console.log(inputCopy);
   inputCopy.forEach(item => {
     item.addEventListener('click', (event)=>{
 
@@ -21,10 +20,26 @@ function copyInputLeftClick(){
       event.target.select();
       document.execCommand('copy');
 
+
       // event.target.insertAdjacentHTML('afterend', '<div class="input-copy">copy</div>');
     })
   });
 
+}
+// Show Copy Text After Click Input
+function copySpanShow(){
+    var copyText = document.querySelectorAll('.copy-text');
+    var copy = document.querySelectorAll('.copy');
+
+    for (var i = 0; i < copyText.length; i++){
+        copyText[i].addEventListener("click", function(){
+            for(var a = 0; a < copy.length; a++) {
+                copy[a].setAttribute('style', 'opacity: 0;');
+            }
+            var copyText_next = this.nextSibling;
+            copyText_next.setAttribute('style', 'opacity: 1;');
+        });
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -33,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function Copy Text From Input-Textarea
     copyInputLeftClick();
+    copySpanShow();
 
 });
 

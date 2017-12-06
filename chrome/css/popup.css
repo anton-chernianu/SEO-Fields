@@ -223,6 +223,8 @@ a {
   font-weight: 300;
   color: #159a5f;
   opacity: 0;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
 }
 
 .switch {
