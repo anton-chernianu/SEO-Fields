@@ -170,6 +170,7 @@ a {
   display: flex;
   padding: 4px 0;
   margin-bottom: 6px;
+  position: relative;
 }
 
 .block__info {
@@ -213,6 +214,14 @@ a {
   padding-top: 10px;
 }
 
+.block__title--sm {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 11px;
+  font-weight: 300;
+}
+
 .lenght {
   font-size: 12px;
   font-weight: 300;
@@ -221,6 +230,7 @@ a {
 .copy {
   font-size: 12px;
   font-weight: 300;
+  padding: 2px 0;
   color: #159a5f;
   opacity: 0;
   -webkit-transition-duration: 0.7s;

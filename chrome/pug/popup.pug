@@ -11,17 +11,19 @@ body
 				.block__info
 					p.block__title Page Title:
 					.block__subtitle
-						p.lenght 20/120 ch
+						p.lenght <span class="lenght-title"></span>/70 ch
 				.block__input
-					input.copy-text(type="text" value="Lorem ipsum.")
+					.testTitle
+					input.copy-text.page-title(type="text" name="page-title" value="")
 					span.copy Copy
 			.block
+				p.block__title.block__title--sm Meta:
 				.block__info
 					p.block__title Description:
 					.block__subtitle
-						p.lenght 20/120 ch
+						p.lenght <span class="lenght-description"></span>/160 ch
 				.block__input
-					textarea.copy-text(name="description") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, autem.
+					textarea.copy-text.page-description(name="description")
 					span.copy Copy
 			#clickbtn Click
 			label.switch

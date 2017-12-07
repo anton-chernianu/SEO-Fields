@@ -24,7 +24,6 @@ function copyInputLeftClick(){
       // event.target.insertAdjacentHTML('afterend', '<div class="input-copy">copy</div>');
     })
   });
-
 }
 // Show Copy Text After Click Input
 function copySpanShow(){
@@ -42,23 +41,35 @@ function copySpanShow(){
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Send Message After Click
-    document.getElementById("clickbtn").addEventListener("click", popup);
+// Title length
+function titlelength() {
+    var title = document.querySelector('.page-title');
+    var title_value = title.value;
+    var title_length = title_value.length;
+    var lengthSpan = document.querySelector('.lenght-title');
+    lengthSpan.innerHTML = title_length;
 
-    // Function Copy Text From Input-Textarea
-    copyInputLeftClick();
-    copySpanShow();
+    if (title_length < 50) {
+        lengthSpan.setAttribute('style', 'color: #b9b608;');
+    } else if (title_length > 50 && title_length < 70) {
+        lengthSpan.setAttribute('style', 'color: green;');
+    } else {
+        lengthSpan.setAttribute('style', 'color: red;');
+    }
+}
 
-});
+// Description length
+// function descriptionlength() {
+//     var description = document.querySelector('.page-description');
+// }
 
-
-
-
-
-
-
-
+function textlength(selector, span) {
+    var getText = document.querySelector(selector);
+    var textLength = getText.length;
+    
+    var getSpan = document.querySelector(span);
+    getSpan.innerHTML = textLength;
+}
 
 function onWindowLoad() {
     // execute script on page
@@ -70,10 +81,28 @@ function onWindowClick() {
     window.close();
 }
 
-chrome.extension.onMessage.addListener(function (request, sender) {
-    if (request.action == 'result') {
-        document.getElementById('title').innerHTML = request.title;
-    }    
+document.addEventListener("DOMContentLoaded", function() {
+    chrome.extension.onMessage.addListener(function (request, sender) {
+        if (request.action == 'result') {
+            // Title
+            var titleInput = document.querySelector('input[name="page-title"]');
+            titleInput.value = request.title;
+            // Title Validation Lenght
+            titlelength();
+            // Description
+            var descriptionTextarea = document.querySelector('.page-description');
+            descriptionTextarea.innerHTML = request.description;
+            // textlength('.page-description','.lenght-description');
+        }    
+    });
+
+    // Send Message After Click
+    document.getElementById("clickbtn").addEventListener("click", popup);
+
+    // Function Copy Text From Input-Textarea
+    copyInputLeftClick();
+    copySpanShow();
+
 });
 
 // window events

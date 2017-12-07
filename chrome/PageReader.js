@@ -3,6 +3,16 @@ function GetTitle() {
     var title = document.title;
     return title;
 }
+// Page Description
+function GetDescription() {
+    var description = document.querySelector('meta[name="description"]');
+    if (description) {
+        var description = document.querySelector('meta[name="description"]').getAttribute('content');
+        return description;
+    } else {
+        return 'No Description';
+    }
+}
 // H1, H2 - Background Change
 function Hbackground_color() {
     var h1 = document.querySelectorAll('h1, h1 span'),
@@ -20,7 +30,8 @@ function Hbackground_color() {
 // Send Message to DOM 
 chrome.extension.sendMessage({
     action: "result",
-    title: GetTitle() // Title
+    title: GetTitle(), // Title
+    description: GetDescription() // Description
 });
 
 // Change H background after click button
