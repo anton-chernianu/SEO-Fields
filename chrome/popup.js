@@ -58,17 +58,21 @@ function titlelength() {
     }
 }
 
-// Description length
-// function descriptionlength() {
-//     var description = document.querySelector('.page-description');
-// }
-
-function textlength(selector, span) {
-    var getText = document.querySelector(selector);
+// Text Length
+function textlength(selector, span, min, max) {
+    var getText = document.querySelector(selector).value;
     var textLength = getText.length;
-    
+    console.log(textLength);
     var getSpan = document.querySelector(span);
     getSpan.innerHTML = textLength;
+
+    if (textLength < min) {
+        getSpan.setAttribute('style', 'color: #b9b608;');
+    } else if (textLength > min && textLength < max) {
+        getSpan.setAttribute('style', 'color: green;');
+    } else {
+        getSpan.setAttribute('style', 'color: red;');
+    }
 }
 
 function onWindowLoad() {
@@ -88,11 +92,12 @@ document.addEventListener("DOMContentLoaded", function() {
             var titleInput = document.querySelector('input[name="page-title"]');
             titleInput.value = request.title;
             // Title Validation Lenght
-            titlelength();
+            textlength('input[name="page-title"]','.lenght-title', 50, 70);
             // Description
             var descriptionTextarea = document.querySelector('.page-description');
             descriptionTextarea.innerHTML = request.description;
-            // textlength('.page-description','.lenght-description');
+            // Description Validation Lenght
+            textlength('.page-description','.lenght-description', 120, 160);
         }    
     });
 
