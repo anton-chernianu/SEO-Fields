@@ -41,17 +41,18 @@ a {
 
 .main {
   width: 400px;
+  min-height: 2500px;
   transition: transform 0.25s ease;
 }
 
 .container {
-	padding: 10px;
+	padding: 4px 10px;
 }
 
 .title {
 	padding: 5px 0;
 	font-weight: 400;
-	font-size: 18px;
+	font-size: 20px;
 	text-transform: uppercase;
 
 	span {
@@ -64,20 +65,25 @@ a {
 	background-color: $block_color;
 	border-radius: 5px;
 	display: flex;
+	flex-flow: row wrap;
 	padding: 4px 0;
 	margin-bottom: 6px;
 	position: relative;
+	box-shadow: 10px 11px 17px -17px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
 
 	&__info {
-		width: 25%;
+		width: 22%;
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: center;
 		align-items: flex-end;
+	    text-align: right;
+	    padding: 5px;
 	}
 
 	&__input {
-		width: 75%;
+		width: 70%;
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: flex-start;
@@ -87,7 +93,7 @@ a {
 	}
 	
 	&__title {
-		
+		width: 100%;
 		&--sm {
 			position: absolute;
 			top: 5px;
@@ -97,14 +103,58 @@ a {
 		}
 	}
 
-	&__subtitle {
-
+	&--single {
+		padding: 7px;
 	}
+
+	&__item {
+		max-height: 0;
+		transition: max-height 0.15s ease-out;
+		visibility: hidden;
+		opacity: 0;
+
+		p {
+			padding-top: 7px;
+		}
+	}
+}
+
+.plus {
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	transform: translateX(-50%) translateY(-50%);
+	cursor: pointer;
+	font-weight: 900;
+	color: #ccc;
+	user-select: none;
+	transition-duration: .15s;
+
+	&:hover {
+		color: #333;
+	}
+
+	&--rotate {
+		transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	}
+}
+
+.active {
+	max-height: 500px;
+    transition: max-height 0.5s ease-in;
+    visibility: visible;
+    opacity: 1;
 }
 
 .lenght {
 	font-size: 12px;
 	font-weight: 300;
+	color: #ccc;
+	letter-spacing: -1px;
+
+	span {
+		font-weight: 600;
+	}
 }
 
 .copy {

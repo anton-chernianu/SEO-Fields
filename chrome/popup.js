@@ -75,6 +75,35 @@ function textlength(selector, span, min, max) {
     }
 }
 
+function openPlus() {
+    document.querySelector('.plus').addEventListener('click',function(){
+        var dataName = this.getAttribute('data-link');
+        var elementId = '#'+dataName;
+        var getElementId = document.querySelector(elementId);
+        var plus = document.querySelector('.plus[data-link="'+dataName+'"]');
+
+        if(getElementId.classList.contains("active")) {
+            getElementId.classList.remove("active");
+            plus.classList.remove("plus--rotate");
+        } else {
+            getElementId.classList.add("active");
+            plus.classList.add("plus--rotate");
+        }
+
+    });
+}
+
+// // Toggle Click
+// function toggleAddStyle(){
+//     var block = document.querySelector('.test');
+
+//     if (block.style.display === "none") {
+//         block.style.display = "block";
+//     } else {
+//         block.style.display = "none";
+//     }
+// }
+
 function onWindowLoad() {
     // execute script on page
     chrome.tabs.executeScript(null, { file: "PageReader.js" });
@@ -107,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function Copy Text From Input-Textarea
     copyInputLeftClick();
     copySpanShow();
-
+    openPlus();
 });
 
 // window events
