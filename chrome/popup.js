@@ -76,7 +76,9 @@ function textlength(selector, span, min, max) {
 }
 
 function openPlus() {
-    document.querySelector('.plus').addEventListener('click',function(){
+    var plusItem = document.querySelectorAll('.plus');
+    for (var i = 0; i < plusItem.length; i++){
+        plusItem[i].addEventListener('click',function(){
         var dataName = this.getAttribute('data-link');
         var elementId = '#'+dataName;
         var getElementId = document.querySelector(elementId);
@@ -91,7 +93,8 @@ function openPlus() {
             plus.classList.add("plus--rotate");
         }
 
-    });
+        });
+    }
 }
 
 // // Toggle Click
