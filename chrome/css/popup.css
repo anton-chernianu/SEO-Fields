@@ -243,8 +243,6 @@ a {
 
 .block__item {
   max-height: 0;
-  -webkit-transition: max-height 0.15s ease-out;
-  transition: max-height 0.15s ease-out;
   visibility: hidden;
   opacity: 0;
 }

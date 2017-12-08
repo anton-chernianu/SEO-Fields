@@ -68,7 +68,7 @@ function textlength(selector, span, min, max) {
 
     if (textLength < min) {
         getSpan.setAttribute('style', 'color: #b9b608;');
-    } else if (textLength > min && textLength < max) {
+    } else if (textLength >= min && textLength < max) {
         getSpan.setAttribute('style', 'color: green;');
     } else {
         getSpan.setAttribute('style', 'color: red;');
@@ -85,7 +85,8 @@ function openPlus() {
         if(getElementId.classList.contains("active")) {
             getElementId.classList.remove("active");
             plus.classList.remove("plus--rotate");
-        } else {
+        } 
+         else {
             getElementId.classList.add("active");
             plus.classList.add("plus--rotate");
         }
