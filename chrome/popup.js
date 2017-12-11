@@ -121,7 +121,8 @@ function onWindowClick() {
 document.addEventListener("DOMContentLoaded", function() {
     chrome.extension.onMessage.addListener(function (request, sender) {
         if (request.action == 'result') {
-            // Title
+
+            // Get Title
             var titleInput = document.querySelector('input[name="page-title"]');
             titleInput.value = request.title;
             // Title Validation Lenght
@@ -131,6 +132,24 @@ document.addEventListener("DOMContentLoaded", function() {
             descriptionTextarea.innerHTML = request.description;
             // Description Validation Lenght
             textlength('.page-description','.lenght-description', 120, 160);
+
+            // Get OpenGraph Meta
+            var opengraph = request.opengraph;
+            // OpenGraph Type
+            var opengraph__type = document.querySelector('input[name="og-type"]');
+            opengraph__type.value = opengraph['type'];
+            // OpenGraph Title
+            var opengraph__title = document.querySelector('input[name="og-title"]');
+            opengraph__title.value = opengraph['title'];
+            // OpenGraph Description
+            var opengraph__description = document.querySelector('.og-description');
+            opengraph__description.innerHTML = opengraph['description'];
+            // OpenGraph Image
+            var opengraph__image = document.querySelector('input[name="og-image"]');
+            opengraph__image.value = opengraph['image'];
+
+            // alert(opengraph['title'] + '\n' + opengraph['description'] + '\n' + opengraph['type']);
+            // alert(opengraph['image']);
         }    
     });
 

@@ -113,9 +113,16 @@ a {
 		// transition: max-height 0.15s ease-out;
 		visibility: hidden;
 		opacity: 0;
+		display: flex;
+		flex-flow: row wrap;
 
 		p {
-			padding-top: 7px;
+			// padding-top: 7px;
+			font-size: 12px;
+		}
+
+		.block__info {
+			width: 21%;
 		}
 	}
 
@@ -131,6 +138,12 @@ a {
 			margin-left: 5px;
 			margin-right: 5px;
 		}
+	}
+
+	&__val {
+		font-weight: 300;
+		font-size: 13px;
+		color: #ccc;
 	}
 }
 

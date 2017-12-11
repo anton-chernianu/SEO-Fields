@@ -245,10 +245,23 @@ a {
   max-height: 0;
   visibility: hidden;
   opacity: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 .block__item p {
-  padding-top: 7px;
+  font-size: 12px;
+}
+
+.block__item .block__info {
+  width: 21%;
 }
 
 .block--pt20 {
@@ -267,6 +280,12 @@ a {
 .block--30:nth-child(2) {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.block__val {
+  font-weight: 300;
+  font-size: 13px;
+  color: #ccc;
 }
 
 .block-grids {

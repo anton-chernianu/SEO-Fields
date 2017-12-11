@@ -26,13 +26,50 @@ body
 					span.copy Copy
 			.block.block--single
 				.plus(data-link="opengraph") +
-				p.block__title OpenGraph Tags:
+				p.block__title OpenGraph Tags: <span class="block__val"> 0/5 </span>
 				.block__item#opengraph
-						p Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eos necessitatibus nihil libero aut sint, nobis aspernatur laborum assumenda atque quia dolore voluptatibus natus aliquam eveniet tempore ut animi et.
-						.uuu Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eos necessitatibus nihil libero aut sint, nobis aspernatur laborum assumenda atque quia dolore voluptatibus natus aliquam eveniet tempore ut animi et.
+					.block__info
+						p.block__title OG<br> Type:
+					.block__input
+						input.copy-text.og-type(type="text" name="og-type" value="")
+						span.copy Copy
+					.block__info
+						p.block__title OG<br> Title:
+					.block__input
+						input.copy-text.og-title(type="text" name="og-title" value="")
+						span.copy Copy
+					.block__info
+						p.block__title OG<br> Description:
+					.block__input
+						textarea.copy-text.og-description(name="og-description")
+						span.copy Copy
+					.block__info
+						p.block__title OG<br> Image:
+					.block__input
+						input.copy-text.og-image(type="text" name="og-image" value="")
+						span.copy Copy
+			.block.block--single
+				.plus(data-link="twitter") +
+				p.block__title Twitter Tags: <span class="block__val"> 0/3 </span>
+				.block__item#twitter
+					.block__info
+						p.block__title Twitter<br> Image:
+					.block__input
+						input.copy-text.twitter-image(type="text" name="twitter-image" value="")
+						span.copy Copy
+					.block__info
+						p.block__title Twitter<br> Title:
+					.block__input
+						input.copy-text.twitter-title(type="text" name="twitter-title" value="")
+						span.copy Copy
+					.block__info
+						p.block__title Twitter<br> Description:
+					.block__input
+						input.copy-text.twitter-description(type="text" name="twitter-description" value="")
+						span.copy Copy
 			.block.block--single
 				.plus(data-link="alt-images") +
-				p.block__title Alt Images:
+				p.block__title Alt Images List:
 				.block__item#alt-images
 						p Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eos necessitatibus nihil libero aut sint, nobis aspernatur laborum assumenda atque quia dolore voluptatibus natus aliquam eveniet tempore ut animi et.
 						.uuu Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eos necessitatibus nihil libero aut sint, nobis aspernatur laborum assumenda atque quia dolore voluptatibus natus aliquam eveniet tempore ut animi et.
@@ -55,17 +92,12 @@ body
 						span(class="switch-label" data-on="On" data-off="Off")
 						span(class="switch-handle")
 				.block.block--single.block--30.block--pt20
-					p.block__title.block__title--sm.block Paragraph:
+					p.block__title.block__title--sm.block Images:
 					table.table
 						tr
 							td
-								p  h1 - <span>1</span>
-								p  h2 - <span>0</span>
-								p  h3 - <span>4</span>
-							td
-								p  h4 - <span>6</span>
-								p  h5 - <span>2</span>
-								p  h6 - <span>0</span>
+								p  Alt - <span>1</span>
+								p  With out Alt - <span>6</span>
 				.block.block--single.block--30.block--pt20
 					p.block__title.block__title--sm.block Text:
 					table.table

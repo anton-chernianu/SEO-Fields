@@ -60,11 +60,65 @@ function Hbackground_color() {
     }
 }
 
+function OpengraphMeta() {
+    var opengraph = {};
+    // Title
+    var title = document.querySelector('meta[property="og:title"]');
+    if (title) {
+        var title__content = title.getAttribute('content');
+        opengraph.title = title__content;
+    }
+    // Description
+    var description = document.querySelector('meta[property="og:description"]');
+    if (description) {
+        var description__content = description.getAttribute('content');
+        opengraph.description = description__content; 
+    }
+    // Type
+    var type = document.querySelector('meta[property="og:type"]');
+    if (type) {
+        var type__content = type.getAttribute('content');
+        opengraph.type = type__content; 
+    }
+    // Image
+    var image = document.querySelector('meta[property="og:image"]');
+    if (image) {
+        var image__content = image.getAttribute('content');
+        opengraph.image = image__content; 
+    }
+
+    return opengraph;
+}
+
+function twitterMeta() {
+    var twitterMeta = {};
+    // Title
+    var title = document.querySelector('meta[name="twitter:title"]');
+    if (title) {
+        var title__content = title.getAttribute('content');
+        twitterMeta.title = title__content;
+    }
+    // Description
+    var description = document.querySelector('meta[name="twitter:description"]');
+    if (description) {
+        var description__content = description.getAttribute('content');
+        twitterMeta.description = description__content; 
+    }
+    // Image
+    var image = document.querySelector('meta[name="twitter:image"]');
+    if (image) {
+        var image__content = image.getAttribute('content');
+        twitterMeta.image = image__content; 
+    }
+}
+
+
 // Send Message to DOM 
 chrome.extension.sendMessage({
     action: "result",
     title: GetTitle(), // Title
-    description: GetDescription() // Description
+    description: GetDescription(), // Description
+    opengraph: OpengraphMeta()
 });
 
 // Change H background after click button
