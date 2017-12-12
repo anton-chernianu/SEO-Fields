@@ -147,6 +147,19 @@ a {
 	}
 }
 
+.opengraph {
+
+	&__image {
+		width: 100%;
+		text-align: right;
+
+		img{
+			width: 100%;
+			max-width: 200px;
+		}
+	}
+}
+
 .block-grids {
 	display: flex;
 	flex-flow: row nowrap;

@@ -288,6 +288,16 @@ a {
   color: #ccc;
 }
 
+.opengraph__image {
+  width: 100%;
+  text-align: right;
+}
+
+.opengraph__image img {
+  width: 100%;
+  max-width: 200px;
+}
+
 .block-grids {
   display: -webkit-box;
   display: -webkit-flex;

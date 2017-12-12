@@ -97,6 +97,21 @@ function openPlus() {
     }
 }
 
+function createNewTab(){
+    document.querySelector('.link').addEventListener('click', function(){
+        chrome.tabs.getSelected(null,function(tab) {
+            var tablink = tab.url;
+            alert(tablink);
+            
+            var newURL = "http://google.com";
+
+            chrome.tabs.create({ url: newURL });
+
+
+        });
+    });
+}
+
 // // Toggle Click
 // function toggleAddStyle(){
 //     var block = document.querySelector('.test');
@@ -123,13 +138,13 @@ document.addEventListener("DOMContentLoaded", function() {
         if (request.action == 'result') {
 
             // Get Title
-            var titleInput = document.querySelector('input[name="page-title"]');
-            titleInput.value = request.title;
+            var title = document.querySelector('input[name="page-title"]');
+            title.value = request.title;
             // Title Validation Lenght
             textlength('input[name="page-title"]','.lenght-title', 50, 70);
             // Description
-            var descriptionTextarea = document.querySelector('.page-description');
-            descriptionTextarea.innerHTML = request.description;
+            var description = document.querySelector('.page-description');
+            description.innerHTML = request.description;
             // Description Validation Lenght
             textlength('.page-description','.lenght-description', 120, 160);
 
@@ -148,8 +163,18 @@ document.addEventListener("DOMContentLoaded", function() {
             var opengraph__image = document.querySelector('input[name="og-image"]');
             opengraph__image.value = opengraph['image'];
 
-            // alert(opengraph['title'] + '\n' + opengraph['description'] + '\n' + opengraph['type']);
-            // alert(opengraph['image']);
+            // Get Twitter Meta
+            var twitter = request.twitter;
+            // Twitter Title
+            var twitter__title = document.querySelector('input[name="twitter-title"]');
+            twitter__title.value = twitter.title;
+            // Twitter Description
+            var twitter__description = document.querySelector('.twitter-description');
+            twitter__description.innerHTML = twitter.description;
+            // Twitter Image
+            var twitter__image = document.querySelector('input[name="twitter-image"]');
+            twitter__image.value = twitter.image;
+            
         }    
     });
 
@@ -160,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
     copyInputLeftClick();
     copySpanShow();
     openPlus();
+
 });
 
 // window events

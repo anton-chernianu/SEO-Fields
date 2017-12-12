@@ -26,7 +26,7 @@ body
 					span.copy Copy
 			.block.block--single
 				.plus(data-link="opengraph") +
-				p.block__title OpenGraph Tags: <span class="block__val"> 0/5 </span>
+				p.block__title OpenGraph Tags: <span class="block__val"> 0/4 </span>
 				.block__item#opengraph
 					.block__info
 						p.block__title OG<br> Type:
@@ -48,6 +48,9 @@ body
 					.block__input
 						input.copy-text.og-image(type="text" name="og-image" value="")
 						span.copy Copy
+					.opengraph__image
+						a.link(href="http://davidroytman.com/img/viber.jpg") LINK CLICK <br><br><br>
+						img(src="http://davidroytman.com/img/viber.jpg", alt="OpenGraph Image")
 			.block.block--single
 				.plus(data-link="twitter") +
 				p.block__title Twitter Tags: <span class="block__val"> 0/3 </span>
@@ -65,7 +68,7 @@ body
 					.block__info
 						p.block__title Twitter<br> Description:
 					.block__input
-						input.copy-text.twitter-description(type="text" name="twitter-description" value="")
+						textarea.copy-text.twitter-description
 						span.copy Copy
 			.block.block--single
 				.plus(data-link="alt-images") +
