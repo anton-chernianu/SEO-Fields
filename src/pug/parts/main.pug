@@ -1,54 +1,29 @@
-.header
+header.header
 	.container.header__container
-		.logo
-			//- img.logo__image(src="http://chernianu.com/project/img/doggy.svg", alt="SeoBook")
 		ul.menu
+			li.menu__item.menu__logo
+				a(href="#")
+					.logo
+						h1 SEO <span>Fields</span>
 			li.menu__item
-				a(href="#") Home				
+				a.menu__link(href="#") About
 			li.menu__item
-				a(href="#") Download
-.buttons
-	.container
-		.runScript RUN SCRIPT
-.content
+				a.menu__link(href="#") Download
+			li.menu__item
+				a.menu__link(href="#") Contact
+		.header__button
+			a.btn(href="#") Download
+	.container.header__sub
+		p.header__title SEO Fields
+		p.header__subtitle A browser extension for <span>Chrome</span>
+section.content
 	.container.content__container
-		h1.title.title--center.title--uppercase Demo Content
-		.content__block
-			//- img(src="http://www.canines4hope.com/images/seizure-alert-dogs.jpg", alt="doggy")
-			img(src="", alt="doggy")
-			.content__text
-				h2.title Lorem ipsum dolor.
-				h3.title Lorem ipsum dolor.
-				h4.title Lorem ipsum dolor.
-				h5.title Lorem ipsum dolor.
-				h6.title Lorem ipsum dolor.
-				p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, fuga, ad. Aliquid, vitae asperiores dolor natus minima vero non dolorem quo odio quaerat aut temporibus quas facilis? Reiciendis, accusamus, quam?
-				p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ab assumenda provident mollitia. Aliquam error molestiae quo in dolore, obcaecati labore, consequuntur eos expedita corrupti, temporibus ratione. Tempore, porro, facere.
-		.content__block
-			//- img(src="http://www.canines4hope.com/images/seizure-alert-dogs.jpg", alt="doggy")
-			img(src="", alt="doggy")
-			.content__text
-				h2.title Lorem ipsum dolor.
-				p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, fuga, ad. Aliquid, vitae asperiores dolor natus minima vero non dolorem quo odio quaerat aut temporibus quas facilis? Reiciendis, accusamus, quam?
-				p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia quae aperiam modi explicabo, necessitatibus numquam veritatis deserunt totam alias cumque commodi mollitia voluptatem sit reprehenderit recusandae dolores! Nam ad, nulla!
-footer.footer
-	.container
-		p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-.btn Click
-//- .container
-//- 	h1 Hello World h1
-//- 	h2 Hello World h2
-//- 	p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis unde aliquam omnis ipsam consequuntur cumque labore deserunt earum ullam quod. Praesentium eius aut, sunt vero minus natus modi odio dolorum.
-//- .seobookm
-	.seobookm__container
-		.close Close
-		p.seobookm__title <span>Title:</span>
-		p.seobookm__text#titleLen | 170ch
-		input.seobookm__copy(type="text" value="Hello World")
-		p.seobookm__title <span>Description:</span>
-		p.seobookm__text#descLen | 300ch
-		textarea.seobookm__copy
-			| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, quo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto officia quibusdam debitis tenetur ullam placeat ducimus. Nostrum eum facilis corporis libero fugiat aliquam voluptates repudiandae.
-.btnclick ClickPop
+		.content__info
+			p.title Lorem ipsum dolor sit.
+			p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nulla modi, porro quae harum ducimus officiis tenetur? Perspiciatis quisquam maxime maiores, amet nisi saepe distinctio, sapiente, quam corporis necessitatibus explicabo.
+			p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, expedita, nisi? Deserunt, ut cupiditate vel inventore necessitatibus odio commodi, autem magni quos dolorem tempora reprehenderit! Nulla soluta harum illum, aspernatur.
+			//- a.btn(href="#") Download Free
+		.content__preview
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint similique quis sapiente, sit incidunt, facilis. Animi adipisci praesentium magnam dolore recusandae, alias nemo eum sit id quisquam, unde voluptas excepturi!
 
-script(src="js/main.js")
+//- script(src="js/main.js")

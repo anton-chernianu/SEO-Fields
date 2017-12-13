@@ -81,7 +81,7 @@ function textlength(selector, span, min, max) {
         getSpan.setAttribute('style', 'color: red;');
     }
 }
-
+// Toogle Plus Click
 function openPlus() {
     var plusItem = document.querySelectorAll('.plus');
     for (var i = 0; i < plusItem.length; i++){
@@ -103,7 +103,7 @@ function openPlus() {
         });
     }
 }
-
+// OpenGraph Background Image
 function openGraphImage() {
     var opengraphImage_link = document.querySelector('input[name="og-image"]').value;
     var opengraphImage_length = opengraphImage_link.length;
@@ -114,6 +114,10 @@ function openGraphImage() {
     }else{
         backgroundDiv.style = "display:none;";
     }
+}
+// OpenGraph Validation
+function openGraphVal() {
+    
 }
 
 function createNewTab(){

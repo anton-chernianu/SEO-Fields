@@ -1,61 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SeoBookmarklet - Site Information</title>
+    <title>SEO Fields - A browser extension for Chrome</title>
     <meta charset="UTF-8">
     <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, ipsum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, ducimus.">
     <meta name="author" content="Jason Statham">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
   </head>
   <body class="home">
-    <div class="header">
-      <div class="container header__container">
-        <div class="logo"></div>
-        <ul class="menu">
-          <li class="menu__item"><a href="#">Home				</a></li>
-          <li class="menu__item"><a href="#">Download</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="buttons">
-      <div class="container">
-        <div class="runScript">RUN SCRIPT</div>
-      </div>
-    </div>
-    <div class="content">
-      <div class="container content__container">
-        <h1 class="title title--center title--uppercase">Demo Content</h1>
-        <div class="content__block"><img src="" alt="doggy">
-          <div class="content__text">
-            <h2 class="title">Lorem ipsum dolor.</h2>
-            <h3 class="title">Lorem ipsum dolor.</h3>
-            <h4 class="title">Lorem ipsum dolor.</h4>
-            <h5 class="title">Lorem ipsum dolor.</h5>
-            <h6 class="title">Lorem ipsum dolor.</h6>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, fuga, ad. Aliquid, vitae asperiores dolor natus minima vero non dolorem quo odio quaerat aut temporibus quas facilis? Reiciendis, accusamus, quam?</p>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ab assumenda provident mollitia. Aliquam error molestiae quo in dolore, obcaecati labore, consequuntur eos expedita corrupti, temporibus ratione. Tempore, porro, facere.</p>
+    <main>
+      <header class="header">
+        <div class="container header__container">
+          <ul class="menu">
+            <li class="menu__item menu__logo"><a href="#">
+                <div class="logo">
+                  <h1>SEO <span>Fields</span></h1>
+                </div></a></li>
+            <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Download</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+          </ul>
+          <div class="header__button"><a class="btn" href="#">Download</a></div>
+        </div>
+        <div class="container header__sub">
+          <p class="header__title">SEO Fields</p>
+          <p class="header__subtitle">A browser extension for <span>Chrome</span></p>
+        </div>
+      </header>
+      <section class="content">
+        <div class="container content__container">
+          <div class="content__info">
+            <p class="title">Lorem ipsum dolor sit.</p>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nulla modi, porro quae harum ducimus officiis tenetur? Perspiciatis quisquam maxime maiores, amet nisi saepe distinctio, sapiente, quam corporis necessitatibus explicabo.</p>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, expedita, nisi? Deserunt, ut cupiditate vel inventore necessitatibus odio commodi, autem magni quos dolorem tempora reprehenderit! Nulla soluta harum illum, aspernatur.</p>
+          </div>
+          <div class="content__preview">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint similique quis sapiente, sit incidunt, facilis. Animi adipisci praesentium magnam dolore recusandae, alias nemo eum sit id quisquam, unde voluptas excepturi!</p>
           </div>
         </div>
-        <div class="content__block"><img src="" alt="doggy">
-          <div class="content__text">
-            <h2 class="title">Lorem ipsum dolor.</h2>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, fuga, ad. Aliquid, vitae asperiores dolor natus minima vero non dolorem quo odio quaerat aut temporibus quas facilis? Reiciendis, accusamus, quam?</p>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia quae aperiam modi explicabo, necessitatibus numquam veritatis deserunt totam alias cumque commodi mollitia voluptatem sit reprehenderit recusandae dolores! Nam ad, nulla!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <div class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      </div>
-    </footer>
-    <div class="btn">Click</div>
-    <div class="btnclick">ClickPop</div>
-    <script src="js/main.js"></script>
+      </section>
+    </main>
   </body>
 </html>

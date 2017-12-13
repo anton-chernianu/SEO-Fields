@@ -146,7 +146,7 @@ h6 {
 body {
   background-color: #fff;
   color: #343434;
-  font-family: "Open Sans";
+  font-family: "Roboto";
 }
 
 *, *:before, *:after {
@@ -166,26 +166,14 @@ a:hover {
 }
 
 .container {
-  max-width: 980px;
+  max-width: 1140px;
   width: 100%;
   margin: 0 auto;
 }
 
-.title {
-  font-size: 2.2rem;
-}
-
-.title--center {
-  text-align: center;
-}
-
-.title--uppercase {
-  text-transform: uppercase;
-}
-
 .header {
-  background-color: #e2e2e2;
-  padding: 5px 0;
+  background-color: #00e7b9;
+  color: #fff;
 }
 
 .header__container {
@@ -193,24 +181,38 @@ a:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row nowrap;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 0 10px;
 }
 
-.logo__image {
-  width: 100px;
-  height: 100px;
+.header__sub {
+  padding: 0 10px;
+  padding-bottom: 40px;
+}
+
+.header__sub:before {
+  content: '';
+  height: 70px;
+  display: block;
+  width: 100%;
+}
+
+.header__title {
+  font-weight: 900;
+  font-size: 5rem;
+}
+
+.header__subtitle {
+  font-weight: 500;
+  font-size: 2.5rem;
+  margin-top: -10px;
+}
+
+.header__subtitle span {
+  font-weight: 900;
 }
 
 .menu {
@@ -218,158 +220,101 @@ a:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.menu__item {
-  padding: 0 10px;
-}
-
-.content__container {
-  padding: 25px 0;
-}
-
-.content__block {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row nowrap;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 10px 0;
 }
 
-.content__text {
-  padding: 0 10px;
+.menu__item .menu__link {
+  display: block;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  height: 70px;
+  padding: 25px 15px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  -webkit-border-bottom-right-radius: 2px;
+          border-bottom-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+          border-bottom-left-radius: 2px;
 }
 
-.content .text {
-  padding: 5px 0;
+.menu__item .menu__link:hover {
+  background-color: rgba(2, 206, 165, 0.4);
 }
 
-.btn {
-  position: fixed;
-  left: 50px;
-  bottom: 50px;
+.menu__logo {
+  padding: 0;
+  height: auto;
+  padding-right: 40px;
 }
 
-.close {
-  text-align: right;
-  cursor: pointer;
+.menu__logo:hover {
+  background: none;
 }
 
-.preloader {
-  position: fixed;
-  left: 0;
-  top: 0;
+.logo {
+  color: #fff;
+}
+
+.logo h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  text-shadow: 2px 0px 1px rgba(150, 150, 150, 0.4);
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+}
+
+.logo h1 span {
+  margin-top: -5px;
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo img {
   width: 100%;
-  height: 100%;
-  background-color: #fff;
-  z-index: 9999;
+  max-width: 80px;
+  height: 60px;
 }
 
-.preloader__container {
-  display: table-cell;
-  width: 100vw;
-  height: 100vh;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.loader {
-  font-size: 10px;
-  margin: 50px auto;
-  text-indent: -9999em;
-  width: 11em;
-  height: 11em;
-  -webkit-border-radius: 50%;
-          border-radius: 50%;
-  background: #ffffff;
-  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ffffff), color-stop(42%, rgba(255, 255, 255, 0)));
-  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  position: relative;
-  -webkit-animation: load3 1.4s infinite linear;
-          animation: load3 1.4s infinite linear;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-}
-
-.loader:before {
-  width: 50%;
-  height: 50%;
-  background: #ffffff;
-  -webkit-border-radius: 100% 0 0 0;
-          border-radius: 100% 0 0 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '';
-}
-
-.loader:after {
-  background: #fff;
-  width: 75%;
-  height: 75%;
-  -webkit-border-radius: 50%;
-          border-radius: 50%;
-  content: '';
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-@-webkit-keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-.social {
+.content__container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 10px 0;
-  width: 100%;
-  padding: 0 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.social--footer {
-  max-width: 220px;
+.content__info {
+  padding: 40px 5px;
 }
 
-.social--footer .social__button {
-  background: none;
+.content__preview {
+  padding: 40px 5px;
+}
+
+.title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  color: #2f353e;
+  font-weight: 800;
+  padding-bottom: 10px;
+}
+
+.text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.03rem;
+  font-weight: 400;
+  padding-top: 10px;
+  padding-right: 100px;
+  color: #585151;
 }
 
 .social__button {
