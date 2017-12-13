@@ -1,3 +1,10 @@
+//console
+function consoleS(item){
+    var consoleS = document.querySelector('.console');
+    consoleS.innerHTML = item;
+}
+
+
 // Send Message After Click
 function popup() {
     chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
@@ -97,8 +104,21 @@ function openPlus() {
     }
 }
 
+function openGraphImage() {
+    var opengraphImage_link = document.querySelector('input[name="og-image"]').value;
+    var opengraphImage_length = opengraphImage_link.length;
+    var backgroundDiv = document.querySelector('.opengraph__image');
+
+    if (opengraphImage_length > 0) {
+        backgroundDiv.setAttribute("style","background-image:url('"+opengraphImage_link+"')");
+    }else{
+        backgroundDiv.style = "display:none;";
+    }
+}
+
 function createNewTab(){
     document.querySelector('.link').addEventListener('click', function(){
+
         chrome.tabs.getSelected(null,function(tab) {
             var tablink = tab.url;
             alert(tablink);
@@ -109,6 +129,7 @@ function createNewTab(){
 
 
         });
+
     });
 }
 
@@ -175,18 +196,30 @@ document.addEventListener("DOMContentLoaded", function() {
             var twitter__image = document.querySelector('input[name="twitter-image"]');
             twitter__image.value = twitter.image;
             
+
+            // Send Message After Click
+            document.getElementById("clickbtn").addEventListener("click", popup);
+
+            // Function Copy Text From Input-Textarea
+            copyInputLeftClick();
+            copySpanShow();
+            openPlus();
+            openGraphImage();
+
+            createNewTab();
+
         }    
     });
 
-    // Send Message After Click
-    document.getElementById("clickbtn").addEventListener("click", popup);
 
-    // Function Copy Text From Input-Textarea
-    copyInputLeftClick();
-    copySpanShow();
-    openPlus();
+
+
+
 
 });
+
+
+
 
 // window events
 window.onload = onWindowLoad;

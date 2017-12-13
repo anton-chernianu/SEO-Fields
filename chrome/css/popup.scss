@@ -151,7 +151,13 @@ a {
 
 	&__image {
 		width: 100%;
-		text-align: right;
+		height: 150px;
+		max-width: 255px;
+	 	margin-left: 98px;
+		text-align: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
 
 		img{
 			width: 100%;
