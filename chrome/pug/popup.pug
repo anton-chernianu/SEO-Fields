@@ -2,12 +2,13 @@ head
 	link(href='css/popup.css',rel="stylesheet")
 	script(src="popup.js")
 body
+	//- .console
 	header
 		.preloader
 	.main
+		.head
+			p.title <span>Seo</span> Fields
 		.container
-			.console
-			p.title <span>Seo</span>Grab 
 			.block
 				.block__info
 					p.block__title Page Title:
@@ -27,49 +28,49 @@ body
 					span.copy Copy
 			.block.block--single
 				.plus(data-link="opengraph") +
-				p.block__title OpenGraph Tags: <span class="block__val"> 0/4 </span>
+				p.block__title OpenGraph Tags: <span class="block__val block__val--og"><span class="count">0</span>/4 </span>
 				.block__item#opengraph
 					.block__info
 						p.block__title OG<br> Type:
 					.block__input
-						input.copy-text.og-type(type="text" name="og-type" value="")
+						input.copy-text.og-type(data-og="field" type="text" name="og-type" value="")
 						span.copy Copy
 					.block__info
 						p.block__title OG<br> Title:
 					.block__input
-						input.copy-text.og-title(type="text" name="og-title" value="")
+						input.copy-text.og-title(data-og="field" type="text" name="og-title" value="")
 						span.copy Copy
 					.block__info
 						p.block__title OG<br> Description:
 					.block__input
-						textarea.copy-text.og-description(name="og-description")
+						textarea.copy-text.og-description(data-og="field" name="og-description")
 						span.copy Copy
 					.block__info
 						p.block__title OG<br> Image:
 					.block__input
-						input.copy-text.og-image(type="text" name="og-image" value="")
+						input.copy-text.og-image(data-og="field" type="text" name="og-image" value="")
 						span.copy Copy
 					.opengraph__image
 					//- .link LINK CLICK <br><br><br>
 						//- img(src="http://davidroytman.com/img/viber.jpg", alt="OpenGraph Image")
 			.block.block--single
 				.plus(data-link="twitter") +
-				p.block__title Twitter Tags: <span class="block__val"> 0/3 </span>
+				p.block__title Twitter Tags: <span class="block__val block__val--twitter"> <span class="count">0</span>/3 </span>
 				.block__item#twitter
 					.block__info
 						p.block__title Twitter<br> Image:
 					.block__input
-						input.copy-text.twitter-image(type="text" name="twitter-image" value="")
+						input.copy-text.twitter-image(data-twitter="field" type="text" name="twitter-image" value="")
 						span.copy Copy
 					.block__info
 						p.block__title Twitter<br> Title:
 					.block__input
-						input.copy-text.twitter-title(type="text" name="twitter-title" value="")
+						input.copy-text.twitter-title(data-twitter="field" type="text" name="twitter-title" value="")
 						span.copy Copy
 					.block__info
 						p.block__title Twitter<br> Description:
 					.block__input
-						textarea.copy-text.twitter-description
+						textarea.copy-text.twitter-description(data-twitter="field")
 						span.copy Copy
 			.block.block--single
 				.plus(data-link="alt-images") +
@@ -79,7 +80,7 @@ body
 						.uuu Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eos necessitatibus nihil libero aut sint, nobis aspernatur laborum assumenda atque quia dolore voluptatibus natus aliquam eveniet tempore ut animi et.
 			.block-grids
 				.block.block--single.block--30.block--pt20
-					p.block__title.block__title--sm.block H Title:
+					p.block__title.block__title--sm.block__title--center H Title:
 					table.table
 						tr
 							td
@@ -96,14 +97,14 @@ body
 						span(class="switch-label" data-on="On" data-off="Off")
 						span(class="switch-handle")
 				.block.block--single.block--30.block--pt20
-					p.block__title.block__title--sm.block Images:
+					p.block__title.block__title--sm.block__title--center Images:
 					table.table
 						tr
 							td
 								p  Alt - <span>1</span>
 								p  With out Alt - <span>6</span>
 				.block.block--single.block--30.block--pt20
-					p.block__title.block__title--sm.block Text:
+					p.block__title.block__title--sm.block__title--center Text:
 					table.table
 						tr
 							td

@@ -105,18 +105,24 @@ function TwitterMeta() {
     if (title) {
         var title__content = title.getAttribute('content');
         twitterMeta.title = title__content;
+    }else{
+        twitterMeta.title = "";
     }
     // Description
     var description = document.querySelector('meta[name="twitter:description"]');
     if (description) {
         var description__content = description.getAttribute('content');
         twitterMeta.description = description__content; 
+    }else{
+        twitterMeta.description = "";
     }
     // Image
     var image = document.querySelector('meta[name="twitter:image"]');
     if (image) {
         var image__content = image.getAttribute('content');
         twitterMeta.image = image__content; 
+    }else{
+         twitterMeta.image = "";
     }
 
     return twitterMeta;

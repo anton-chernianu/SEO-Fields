@@ -8,9 +8,10 @@
     <div class="preloader"></div>
   </header>
   <div class="main">
+    <div class="head">
+      <p class="title"><span>Seo</span> Fields</p>
+    </div>
     <div class="container">
-      <div class="console"></div>
-      <p class="title"><span>Seo</span>Grab </p>
       <div class="block">
         <div class="block__info">
           <p class="block__title">Page Title:</p>
@@ -36,56 +37,56 @@
       </div>
       <div class="block block--single">
         <div class="plus" data-link="opengraph">+</div>
-        <p class="block__title">OpenGraph Tags: <span class="block__val"> 0/4 </span></p>
+        <p class="block__title">OpenGraph Tags: <span class="block__val block__val--og"><span class="count">0</span>/4 </span></p>
         <div class="block__item" id="opengraph">
           <div class="block__info">
             <p class="block__title">OG<br> Type:</p>
           </div>
           <div class="block__input">
-            <input class="copy-text og-type" type="text" name="og-type" value=""/><span class="copy">Copy</span>
+            <input class="copy-text og-type" data-og="field" type="text" name="og-type" value=""/><span class="copy">Copy</span>
           </div>
           <div class="block__info">
             <p class="block__title">OG<br> Title:</p>
           </div>
           <div class="block__input">
-            <input class="copy-text og-title" type="text" name="og-title" value=""/><span class="copy">Copy</span>
+            <input class="copy-text og-title" data-og="field" type="text" name="og-title" value=""/><span class="copy">Copy</span>
           </div>
           <div class="block__info">
             <p class="block__title">OG<br> Description:</p>
           </div>
           <div class="block__input">
-            <textarea class="copy-text og-description" name="og-description"></textarea><span class="copy">Copy</span>
+            <textarea class="copy-text og-description" data-og="field" name="og-description"></textarea><span class="copy">Copy</span>
           </div>
           <div class="block__info">
             <p class="block__title">OG<br> Image:</p>
           </div>
           <div class="block__input">
-            <input class="copy-text og-image" type="text" name="og-image" value=""/><span class="copy">Copy</span>
+            <input class="copy-text og-image" data-og="field" type="text" name="og-image" value=""/><span class="copy">Copy</span>
           </div>
           <div class="opengraph__image"></div>
         </div>
       </div>
       <div class="block block--single">
         <div class="plus" data-link="twitter">+</div>
-        <p class="block__title">Twitter Tags: <span class="block__val"> 0/3 </span></p>
+        <p class="block__title">Twitter Tags: <span class="block__val block__val--twitter"> <span class="count">0</span>/3 </span></p>
         <div class="block__item" id="twitter">
           <div class="block__info">
             <p class="block__title">Twitter<br> Image:</p>
           </div>
           <div class="block__input">
-            <input class="copy-text twitter-image" type="text" name="twitter-image" value=""/><span class="copy">Copy</span>
+            <input class="copy-text twitter-image" data-twitter="field" type="text" name="twitter-image" value=""/><span class="copy">Copy</span>
           </div>
           <div class="block__info">
             <p class="block__title">Twitter<br> Title:</p>
           </div>
           <div class="block__input">
-            <input class="copy-text twitter-title" type="text" name="twitter-title" value=""/><span class="copy">Copy</span>
+            <input class="copy-text twitter-title" data-twitter="field" type="text" name="twitter-title" value=""/><span class="copy">Copy</span>
           </div>
           <div class="block__info">
             <p class="block__title">Twitter<br> Description:</p>
           </div>
           <div class="block__input">
-            <textarea class="copy-text twitter-description"></textarea><span class="copy">Copy</span>
+            <textarea class="copy-text twitter-description" data-twitter="field"></textarea><span class="copy">Copy</span>
           </div>
         </div>
       </div>
@@ -99,7 +100,7 @@
       </div>
       <div class="block-grids">
         <div class="block block--single block--30 block--pt20">
-          <p class="block__title block__title--sm block">H Title:</p>
+          <p class="block__title block__title--sm block__title--center">H Title:</p>
           <table class="table">
             <tr>
               <td>
@@ -120,7 +121,7 @@
           </label>
         </div>
         <div class="block block--single block--30 block--pt20">
-          <p class="block__title block__title--sm block">Images:</p>
+          <p class="block__title block__title--sm block__title--center">Images:</p>
           <table class="table">
             <tr>
               <td>
@@ -131,7 +132,7 @@
           </table>
         </div>
         <div class="block block--single block--30 block--pt20">
-          <p class="block__title block__title--sm block">Text:</p>
+          <p class="block__title block__title--sm block__title--center">Text:</p>
           <table class="table">
             <tr>
               <td>

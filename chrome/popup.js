@@ -75,7 +75,7 @@ function textlength(selector, span, min, max) {
 
     if (textLength < min) {
         getSpan.setAttribute('style', 'color: #b9b608;');
-    } else if (textLength >= min && textLength < max) {
+    } else if (textLength >= min && textLength <= max) {
         getSpan.setAttribute('style', 'color: green;');
     } else {
         getSpan.setAttribute('style', 'color: red;');
@@ -108,7 +108,6 @@ function openGraphImage() {
     var opengraphImage_link = document.querySelector('input[name="og-image"]').value;
     var opengraphImage_length = opengraphImage_link.length;
     var backgroundDiv = document.querySelector('.opengraph__image');
-
     if (opengraphImage_length > 0) {
         backgroundDiv.setAttribute("style","background-image:url('"+opengraphImage_link+"')");
     }else{
@@ -117,7 +116,37 @@ function openGraphImage() {
 }
 // OpenGraph Validation
 function openGraphVal() {
-    
+    var fields = document.querySelectorAll('[data-og="field"]');
+    var length = fields.length;
+    var countSpan = document.querySelector('.block__val--og .count');
+    var count = 0;
+    [].forEach.call(fields,function(field){
+        var field_val = field.value;
+        var field_val_len = field_val.length;
+        if (field_val_len > 0) {
+            count = count + 1;
+            countSpan.innerHTML = count;
+        }else{
+            countSpan.innerHTML = count;
+        }
+    });
+}
+// Twitter Validation
+function twitterVal() {
+    var fields = document.querySelectorAll('[data-twitter="field"]');
+    var length = fields.length;
+    var countSpan = document.querySelector('.block__val--twitter .count');
+    var count = 0;
+    [].forEach.call(fields,function(field){
+        var field_val = field.value;
+        var field_val_len = field_val.length;
+        if (field_val_len > 0) {
+            count = count + 1;
+            countSpan.innerHTML = count;
+        }else{
+            countSpan.innerHTML = count;
+        }
+    });
 }
 
 function createNewTab(){
@@ -209,7 +238,8 @@ document.addEventListener("DOMContentLoaded", function() {
             copySpanShow();
             openPlus();
             openGraphImage();
-
+            openGraphVal();
+             twitterVal();
             createNewTab();
 
         }    
