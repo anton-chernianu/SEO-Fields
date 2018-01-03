@@ -128,6 +128,22 @@ function TwitterMeta() {
     return twitterMeta;
 }
 
+function getImageInfo() {
+    var basic_arr = [];
+    var images = document.querySelectorAll('img')
+    for(var i=0;i<images.length;i++){
+        var sec_arr = [];
+        // Alt Image
+        var alt_image = images[i].alt;
+        sec_arr.push(alt_image);
+        // Url
+        var url_images = images[i].currentSrc;
+        sec_arr.push(url_images);
+
+        basic_arr.push(sec_arr);
+    }
+    return basic_arr;
+}
 
 // Send Message to DOM 
 chrome.extension.sendMessage({
@@ -135,7 +151,8 @@ chrome.extension.sendMessage({
     title: GetTitle(), 
     description: GetDescription(), 
     opengraph: OpengraphMeta(), 
-    twitter: TwitterMeta()
+    twitter: TwitterMeta(),
+    imagesinfo: getImageInfo()
 });
 
 // Change H background after click button

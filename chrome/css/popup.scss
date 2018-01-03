@@ -124,7 +124,6 @@ a {
 
 	&__item {
 		max-height: 0;
-		// transition: max-height 0.15s ease-out;
 		visibility: hidden;
 		opacity: 0;
 		display: flex;
@@ -137,6 +136,10 @@ a {
 
 		.block__info {
 			width: 21%;
+		}
+
+		&--images {
+			width: 100%;
 		}
 	}
 
@@ -220,7 +223,7 @@ a {
 }
 
 .active {
-	max-height: 500px;
+	max-height: 999999px;
     transition: max-height 0.5s ease-in;
     visibility: visible;
     opacity: 1;
@@ -343,6 +346,56 @@ a {
 .switch-green > .switch-input:checked ~ .switch-label {
   background: #4fb845;
 }
+
+.images {
+	display: flex;
+	width: 100%;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		background: #e0dfdf;
+	}
+	&__bg {
+		width: 85px;
+		height: 65px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center center;
+		margin: 5px;
+		background-color: #1b1b1b;
+	}
+	&__inputs {
+		width: 67%;
+	}
+	&__input {
+		margin-bottom: 5px;
+		input {
+			width: 100%;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .console {
 	background-color: green;

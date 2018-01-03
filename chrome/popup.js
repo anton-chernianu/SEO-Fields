@@ -69,7 +69,6 @@ function titlelength() {
 function textlength(selector, span, min, max) {
     var getText = document.querySelector(selector).value;
     var textLength = getText.length;
-    console.log(textLength);
     var getSpan = document.querySelector(span);
     getSpan.innerHTML = textLength;
 
@@ -229,17 +228,50 @@ document.addEventListener("DOMContentLoaded", function() {
             var twitter__image = document.querySelector('input[name="twitter-image"]');
             twitter__image.value = twitter.image;
             
+            // Images Info
+            var imagesInfo = request.imagesinfo;
+            var mainImages = document.querySelector('#alt-images');
+            // console.log(imagesInfo);
+            for(var i=0; i<imagesInfo.length; i++){
+                var images = document.createElement('div');
+                images.classList.add('images');
+                mainImages.appendChild(images);
+                images.innerHTML = `
+                    <div class="images__img">
+                        <div class="images__bg" style="background-image: url('`+imagesInfo[i][1]+`');"></div>
+                    </div>
+                    <div class="images__inputs">
+                        <div class="images__input">
+                            <input type="text" class="copy-text" type="text" value="`+imagesInfo[i][1]+`" />
+                            <span class="copy">Copy</span>
+                        </div>
+                        <div class="images__input">
+                            <input type="text" class="copy-text" type="text" value="`+imagesInfo[i][0]+`" />
+                            <span class="copy">Copy</span>
+                        </div>
+                    </div>
+                `;
+
+                // // create (.images)
+                // var images = document.createElement('div');
+                // images.classList.add('images');
+                // mainImages.appendChild(images);
+                // // create (.images__img)
+                // var images__img = document.createElement('div');
+                // images__img.classList.add('images__img');
+
+
+            }
 
             // Send Message After Click
             document.getElementById("clickbtn").addEventListener("click", popup);
 
-            // Function Copy Text From Input-Textarea
             copyInputLeftClick();
             copySpanShow();
             openPlus();
             openGraphImage();
             openGraphVal();
-             twitterVal();
+            twitterVal();
             createNewTab();
 
         }    
