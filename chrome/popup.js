@@ -160,7 +160,9 @@ function altImageVal() {
     var altCountSpan = document.querySelector('.block__val--images .count-completed');
     var errorCountSpan = document.querySelector('.block__val--images  .count-error');
     altCountSpan.innerHTML = withAltCount;
-    errorCountSpan.innerHTML = withOutAlt;
+    if(withOutAlt > 0) {
+        errorCountSpan.innerHTML = withOutAlt;
+    }
     // var altCompSpan = document.querySelector('.block__val--images .count-completed');
     // console.log(altCompSpan);
 
