@@ -18,17 +18,8 @@ function copyInputLeftClick(){
   var inputCopy = document.querySelectorAll('.copy-text');
   inputCopy.forEach(item => {
     item.addEventListener('click', (event)=>{
-
-      // var divInputCopy = document.querySelector('.input-copy');
-      // if (divInputCopy) {
-      //   divInputCopy.parentNode.removeChild(divInputCopy);
-      // }
-
       event.target.select();
       document.execCommand('copy');
-
-
-      // event.target.insertAdjacentHTML('afterend', '<div class="input-copy">copy</div>');
     })
   });
 }
@@ -42,7 +33,7 @@ function copySpanShow(){
             for(var a = 0; a < copy.length; a++) {
                 copy[a].setAttribute('style', 'opacity: 0;');
             }
-            var copyText_next = this.nextSibling;
+            var copyText_next = this.nextElementSibling;
             copyText_next.setAttribute('style', 'opacity: 1;');
         });
     }
@@ -61,7 +52,7 @@ function titlelength() {
     } else if (title_length > 50 && title_length < 70) {
         lengthSpan.setAttribute('style', 'color: green;');
     } else {
-        lengthSpan.setAttribute('style', 'color: red;');
+        lengthSpan.setAttribute('style', 'color: #ffa7a7;');
     }
 }
 
@@ -77,7 +68,7 @@ function textlength(selector, span, min, max) {
     } else if (textLength >= min && textLength <= max) {
         getSpan.setAttribute('style', 'color: green;');
     } else {
-        getSpan.setAttribute('style', 'color: red;');
+        getSpan.setAttribute('style', 'color: #ffa7a7;');
     }
 }
 // Toogle Plus Click
@@ -146,6 +137,34 @@ function twitterVal() {
             countSpan.innerHTML = count;
         }
     });
+}
+
+// IMG alt - Validation
+function altImageVal() {
+    var input = document.querySelectorAll('input[name="altname"]');
+    var imgCount = input.length;
+    // IMG Count
+    var imgCountSpan = document.querySelector('.block__val--images .count-accepted');
+    imgCountSpan.innerHTML = imgCount;
+    // Alt Completed
+    var withOutAlt = 0;
+    for (var i = 0; i < imgCount; i++) {
+        var inputValue = input[i].value;
+        var inputValueLength = inputValue.length;
+        if(inputValueLength < 1){
+            input[i].setAttribute('style', 'border: 1px solid #ff8383;')
+            withOutAlt = withOutAlt + 1;
+        }
+    }
+    var withAltCount = imgCount - withOutAlt;
+    var altCountSpan = document.querySelector('.block__val--images .count-completed');
+    var errorCountSpan = document.querySelector('.block__val--images  .count-error');
+    altCountSpan.innerHTML = withAltCount;
+    errorCountSpan.innerHTML = withOutAlt;
+    // var altCompSpan = document.querySelector('.block__val--images .count-completed');
+    // console.log(altCompSpan);
+
+
 }
 
 function createNewTab(){
@@ -238,29 +257,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 mainImages.appendChild(images);
                 images.innerHTML = `
                     <div class="images__img">
-                        <div class="images__bg" style="background-image: url('`+imagesInfo[i][1]+`');"></div>
+                        <div class="images__bg" style="background-image: url('`+imagesInfo[i][1]+`');""></div>
                     </div>
                     <div class="images__inputs">
                         <div class="images__input">
-                            <input type="text" class="copy-text" type="text" value="`+imagesInfo[i][1]+`" />
+                            <input type="text" class="copy-text" value="`+imagesInfo[i][1]+`">
                             <span class="copy">Copy</span>
                         </div>
                         <div class="images__input">
-                            <input type="text" class="copy-text" type="text" value="`+imagesInfo[i][0]+`" />
+                            <input type="text" name="altname" class="copy-text" value="`+imagesInfo[i][0]+`">
                             <span class="copy">Copy</span>
                         </div>
                     </div>
                 `;
-
-                // // create (.images)
-                // var images = document.createElement('div');
-                // images.classList.add('images');
-                // mainImages.appendChild(images);
-                // // create (.images__img)
-                // var images__img = document.createElement('div');
-                // images__img.classList.add('images__img');
-
-
             }
 
             // Send Message After Click
@@ -272,7 +281,8 @@ document.addEventListener("DOMContentLoaded", function() {
             openGraphImage();
             openGraphVal();
             twitterVal();
-            createNewTab();
+            altImageVal();
+            // createNewTab();
 
         }    
     });
